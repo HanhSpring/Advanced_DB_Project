@@ -31,7 +31,6 @@ namespace Sushi_Restaurant.NhanVien
         {
             guna2DataGridView1.AutoGenerateColumns = false;
 
-            // Kết nối với cơ sở dữ liệu
             using (SqlConnection con = new SqlConnection(MainClass.con_string))
             {
                 try

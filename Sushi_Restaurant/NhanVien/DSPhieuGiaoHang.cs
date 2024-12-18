@@ -26,6 +26,8 @@ namespace Sushi_Restaurant.NhanVien
         }
         private void LoadData()
         {
+            string qry = @"SELECT *
+                           FROM PHIEU_GIAO_HANG_TAN_NOI";
 
             guna2DataGridView1.AutoGenerateColumns = false;
 
@@ -114,7 +116,7 @@ namespace Sushi_Restaurant.NhanVien
 
                             // Tạo SqlCommand để gọi Stored Procedure
                             using (SqlCommand cmd = new SqlCommand("sp_XoaPhieuDatMon", conn))
-                            {
+            {
                                 cmd.CommandType = CommandType.StoredProcedure;
                                 cmd.Parameters.AddWithValue("@MaPhieu", maPhieu);
 

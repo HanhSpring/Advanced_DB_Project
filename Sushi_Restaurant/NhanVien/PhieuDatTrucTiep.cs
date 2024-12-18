@@ -32,8 +32,13 @@ namespace Sushi_Restaurant.NhanVien
        
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (!int.TryParse(txtSoBan.Text, out int soBan) || soBan < 1 || soBan > 100)
+            {
+                MessageBox.Show("Số bàn phải từ 1 đến 100!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSoBan.Focus();
+                return; // Dừng việc lưu nếu dữ liệu không hợp lệ
+            }
 
-            
             using (SqlConnection con = new SqlConnection(MainClass.con_string))
             {
                 try

@@ -220,6 +220,7 @@
             this.Controls.Add(this.txtMaHD);
             this.Controls.Add(this.label2);
             this.Name = "ThemDanhGia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemDanhGia";
             this.Load += new System.EventHandler(this.ThemDanhGia_Load);
             this.ResumeLayout(false);

@@ -431,10 +431,13 @@ namespace Sushi_Restaurant
                         // Gán giá trị cho từng ô cụ thể theo tên cột
                         guna2DataGridView1.Rows[rowIndex].Cells["dgvId"].Value = item["MaMonAn"].ToString();
                         guna2DataGridView1.Rows[rowIndex].Cells["dgvName"].Value = item["TenMonAn"].ToString();
+                        guna2DataGridView1.Rows[rowIndex].Cells["dgvTru"].Value = '-';
+                        guna2DataGridView1.Rows[rowIndex].Cells["dgvCong"].Value = '+';
                         guna2DataGridView1.Rows[rowIndex].Cells["dgvQty"].Value = item["SoLuong"].ToString();
                         guna2DataGridView1.Rows[rowIndex].Cells["dgvPrice"].Value = item["Gia"].ToString();
                         guna2DataGridView1.Rows[rowIndex].Cells["dgvAmount"].Value = item["ThanhTien"].ToString();
                     }
+
                     GetTotal();
                 }
                 catch (Exception ex)
