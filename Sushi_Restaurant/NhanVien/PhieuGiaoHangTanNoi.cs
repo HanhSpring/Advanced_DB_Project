@@ -49,8 +49,9 @@ namespace Sushi_Restaurant.NhanVien
                             txtDiaChi.Text = reader["DiaChiGiaoHang"].ToString();
                             txtmakh.Text = reader["MaKhachHang"].ToString();
                             txtsdt.Text = reader["SoDienThoai"].ToString(); // Hiển thị số điện thoại
-
-                            // Tình trạng xác nhận
+                            txttime.Text = reader["ThoiGianNhanHang"].ToString(); // Hiển thị thời gian nhận
+                                                                                  // Tình trạng xác nhận
+                            txtdate.Text = Convert.ToDateTime(reader["NgayDat"]).ToString("dd/MM/yyyy");
                             cbttxn.Items.Clear();
                             cbttxn.Items.AddRange(new string[] { "Chưa xác nhận", "Đã xác nhận" });
                             bool tinhTrangXacNhan = reader["TinhTrangXacNhan"] != DBNull.Value && (bool)reader["TinhTrangXacNhan"];
@@ -198,7 +199,7 @@ namespace Sushi_Restaurant.NhanVien
             // Điều kiện cho tình trạng đơn hàng
             if (tinhTrangDonHang == "Đã giao")
             {
-                cbttdh.Enabled = true; // Bật chỉnh sửa tình trạng đơn hàng
+                cbttdh.Enabled = false; // Bật chỉnh sửa tình trạng đơn hàng
                 btnLuu.Enabled = false; // Khóa nút Lưu
                 btnLuu.BackColor = Color.Gray; // Tô xám nút Lưu
             }
